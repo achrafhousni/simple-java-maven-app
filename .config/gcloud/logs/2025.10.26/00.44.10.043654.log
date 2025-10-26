@@ -1,0 +1,71 @@
+2025-10-26 00:44:10,046 DEBUG    root            Loaded Command Group: ['gcloud', 'iam']
+2025-10-26 00:44:10,048 DEBUG    root            Loaded Command Group: ['gcloud', 'iam', 'service_accounts']
+2025-10-26 00:44:10,072 DEBUG    root            Loaded Command Group: ['gcloud', 'iam', 'service-accounts', 'create']
+2025-10-26 00:44:10,085 DEBUG    root            Running [gcloud.iam.service-accounts.create] with arguments: [NAME: "jenkins-sa"]
+2025-10-26 00:44:10,124 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): iam.googleapis.com:443
+2025-10-26 00:44:10,664 DEBUG    urllib3.connectionpool https://iam.googleapis.com:443 "POST /v1/projects/tidy-hold-475217-m4/serviceAccounts?alt=json HTTP/1.1" 403 None
+2025-10-26 00:44:10,675 DEBUG    root            Chosen display Format:default
+2025-10-26 00:44:10,732 DEBUG    root            Chosen display Format:default
+2025-10-26 00:44:10,734 DEBUG    root            Chosen display Format:default
+2025-10-26 00:44:10,735 DEBUG    root            (gcloud.iam.service-accounts.create) [511536698491-compute@developer.gserviceaccount.com] does not have permission to access projects instance [tidy-hold-475217-m4] (or it may not exist): Request had insufficient authentication scopes. This command is authenticated as 511536698491-compute@developer.gserviceaccount.com which is the active account specified by the [core/account] property.
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: googleapis.com
+  metadata:
+    method: google.iam.admin.v1.IAM.CreateServiceAccount
+    service: iam.googleapis.com
+  reason: ACCESS_TOKEN_SCOPE_INSUFFICIENT
+
+If you are in a compute engine VM, it is likely that the specified scopes during VM creation are not enough to run this command.
+See https://cloud.google.com/compute/docs/access/service-accounts#accesscopesiam for more information about access scopes.
+See https://cloud.google.com/compute/docs/access/create-enable-service-accounts-for-instances#changeserviceaccountandscopes for how to update access scopes of the VM.
+Traceback (most recent call last):
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 944, in Execute
+    resources = calliope_command.Run(cli=self, args=args)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 955, in Run
+    resources = command_instance.Run(args)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/surface/iam/service_accounts/create.py", line 74, in Run
+    result = client.projects_serviceAccounts.Create(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/generated_clients/apis/iam/v1/iam_v1_client.py", line 4455, in Create
+    return self._RunMethod(
+           ^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/third_party/apitools/base/py/base_api.py", line 747, in _RunMethod
+    return self.ProcessHttpResponse(method_config, http_response, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/third_party/apitools/base/py/base_api.py", line 753, in ProcessHttpResponse
+    self.__ProcessHttpResponse(method_config, http_response, request))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/third_party/apitools/base/py/base_api.py", line 612, in __ProcessHttpResponse
+    raise exceptions.HttpError.FromResponse(
+apitools.base.py.exceptions.HttpForbiddenError: HttpError accessing <https://iam.googleapis.com/v1/projects/tidy-hold-475217-m4/serviceAccounts?alt=json>: response: <{'www-authenticate': 'Bearer realm="https://accounts.google.com/", error="insufficient_scope", scope="https://www.googleapis.com/auth/iam https://www.googleapis.com/auth/cloud-platform"', 'vary': 'Origin, X-Origin, Referer', 'content-type': 'application/json; charset=UTF-8', 'content-encoding': 'gzip', 'date': 'Sun, 26 Oct 2025 00:44:10 GMT', 'server': 'ESF', 'x-xss-protection': '0', 'x-frame-options': 'SAMEORIGIN', 'x-content-type-options': 'nosniff', 'transfer-encoding': 'chunked', 'status': 403}>, content <{
+  "error": {
+    "code": 403,
+    "message": "Request had insufficient authentication scopes.",
+    "status": "PERMISSION_DENIED",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+        "reason": "ACCESS_TOKEN_SCOPE_INSUFFICIENT",
+        "domain": "googleapis.com",
+        "metadata": {
+          "service": "iam.googleapis.com",
+          "method": "google.iam.admin.v1.IAM.CreateServiceAccount"
+        }
+      }
+    ]
+  }
+}
+>
+2025-10-26 00:44:10,740 ERROR    root            (gcloud.iam.service-accounts.create) [511536698491-compute@developer.gserviceaccount.com] does not have permission to access projects instance [tidy-hold-475217-m4] (or it may not exist): Request had insufficient authentication scopes. This command is authenticated as 511536698491-compute@developer.gserviceaccount.com which is the active account specified by the [core/account] property.
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: googleapis.com
+  metadata:
+    method: google.iam.admin.v1.IAM.CreateServiceAccount
+    service: iam.googleapis.com
+  reason: ACCESS_TOKEN_SCOPE_INSUFFICIENT
+
+If you are in a compute engine VM, it is likely that the specified scopes during VM creation are not enough to run this command.
+See https://cloud.google.com/compute/docs/access/service-accounts#accesscopesiam for more information about access scopes.
+See https://cloud.google.com/compute/docs/access/create-enable-service-accounts-for-instances#changeserviceaccountandscopes for how to update access scopes of the VM.

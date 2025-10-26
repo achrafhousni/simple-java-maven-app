@@ -1,0 +1,31 @@
+2025-10-26 00:33:51,519 DEBUG    root            Loaded Command Group: ['gcloud', 'artifacts']
+2025-10-26 00:33:51,521 DEBUG    root            Loaded Command Group: ['gcloud', 'artifacts', 'print_settings']
+2025-10-26 00:33:51,726 DEBUG    root            Loaded Command Group: ['gcloud', 'artifacts', 'print-settings', 'mvn']
+2025-10-26 00:33:51,737 DEBUG    root            Running [gcloud.artifacts.print-settings.mvn] with arguments: [--project: "tidy-hold-475217-m4", --repository: "ms-products"]
+2025-10-26 00:33:51,770 DEBUG    root            (gcloud.artifacts.print-settings.mvn) Failed to find attribute [location]. The attribute can be set in the following ways:
+- provide the argument [--location] on the command line
+- set the property [artifacts/location]
+Traceback (most recent call last):
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 944, in Execute
+    resources = calliope_command.Run(cli=self, args=args)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 955, in Run
+    resources = command_instance.Run(args)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/surface/artifacts/print_settings/mvn.py", line 68, in Run
+    return {"mvn": settings_util.GetMavenSnippet(args)}
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/command_lib/artifacts/print_settings/settings_util.py", line 237, in GetMavenSnippet
+    location, repo_path, maven_cfg = _GetLocationRepoPathAndMavenConfig(
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/command_lib/artifacts/print_settings/settings_util.py", line 94, in _GetLocationRepoPathAndMavenConfig
+    location = _GetRequiredLocationValue(args)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/bin/../lib/google-cloud-sdk/lib/googlecloudsdk/command_lib/artifacts/print_settings/settings_util.py", line 70, in _GetRequiredLocationValue
+    raise ar_exceptions.InvalidInputValueError(_LOCATION_NOT_FOUND_ERROR)
+googlecloudsdk.api_lib.artifacts.exceptions.InvalidInputValueError: Failed to find attribute [location]. The attribute can be set in the following ways:
+- provide the argument [--location] on the command line
+- set the property [artifacts/location]
+2025-10-26 00:33:51,831 ERROR    root            (gcloud.artifacts.print-settings.mvn) Failed to find attribute [location]. The attribute can be set in the following ways:
+- provide the argument [--location] on the command line
+- set the property [artifacts/location]

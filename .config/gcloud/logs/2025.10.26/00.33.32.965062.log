@@ -1,0 +1,15 @@
+2025-10-26 00:33:32,967 DEBUG    root            Loaded Command Group: ['gcloud', 'artifacts']
+2025-10-26 00:33:32,985 DEBUG    root            Loaded Command Group: ['gcloud', 'artifacts', 'print_settings']
+2025-10-26 00:33:33,936 DEBUG    root            Loaded Command Group: ['gcloud', 'artifacts', 'print-settings', 'mvn']
+2025-10-26 00:33:33,963 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'artifacts']
+2025-10-26 00:33:33,966 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'artifacts', 'print_settings']
+2025-10-26 00:33:33,968 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'artifacts', 'print-settings', 'mvn']
+2025-10-26 00:33:33,973 DEBUG    root            Loaded Command Group: ['gcloud', 'beta', 'artifacts']
+2025-10-26 00:33:33,975 DEBUG    root            Loaded Command Group: ['gcloud', 'beta', 'artifacts', 'print_settings']
+2025-10-26 00:33:33,976 DEBUG    root            Loaded Command Group: ['gcloud', 'beta', 'artifacts', 'print-settings', 'mvn']
+2025-10-26 00:33:33,981 DEBUG    root            No implementation for release track [PREVIEW] for element: [/usr/bin/../lib/google-cloud-sdk/lib/surface/artifacts]
+2025-10-26 00:33:33,981 ERROR    root            (gcloud.artifacts.print-settings.mvn) unrecognized arguments:
+  [--project=tidy-hold-475217-m4] (did you mean '--project'?)
+  [--repository=ms-products] (did you mean '--repository'?)
+  To search the help text of gcloud commands, run:
+  gcloud help -- SEARCH_TERMS
