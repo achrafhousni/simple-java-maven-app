@@ -1,4 +1,4 @@
-pipeline {
+/*pipeline {
     agent none
     stages {
         stage('Deploy') {
@@ -15,4 +15,4 @@ pipeline {
             }
         }
     }
-}
+}*/
